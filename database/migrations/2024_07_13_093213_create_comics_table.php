@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title', 255);
             // tutti gli altri campi possono essere nullable all'inizio
             $table->text('description')->nullable();
-            $table->string('thumb', 255)->nullable();
+            $table->text('thumb', 255)->nullable();
             $table->decimal('price', 8, 2)->nullable();
             $table->string('series', 255)->nullable();
             $table->date('sale_date')->nullable();
