@@ -16,6 +16,7 @@ class ComicSeeder extends Seeder
     {
         // importo congif/comics.php
         $data = config('comics');
+        // con truncate i dati non vengono inseriti nuovamente ma soltano una volta
         DB::table('comics')->truncate();
         //  ciclo per popolare la table comics con seed
         foreach ($data as $comic_db) {
