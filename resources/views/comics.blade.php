@@ -1,4 +1,4 @@
 @extends('layouts.app')
 @section('page-title')
-    HOME
+    COMICS
 @endsection
