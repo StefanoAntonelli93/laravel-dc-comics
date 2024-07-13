@@ -1,2 +1,10 @@
 /*resources/scss/app.scss*/
 @import "~bootstrap/scss/bootstrap";
+
+* {
+    font-family: "Montserrat", sans-serif;
+}
+.dc-logo {
+    width: 50px;
+    background-color: white;
+}
