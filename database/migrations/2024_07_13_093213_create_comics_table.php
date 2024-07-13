@@ -15,13 +15,15 @@ return new class extends Migration
             $table->id();
             $table->string('title', 255);
             // tutti gli altri campi possono essere nullable all'inizio
-            $table->string('author', 255)->nullable();
-            $table->string('publisher', 255)->nullable();
-            $table->string('language', 255)->nullable();
-            $table->tinyInteger('page_count')->nullable();
-            $table->string('genre', 255)->nullable();
-            $table->date('publication_date')->nullable();
             $table->text('description')->nullable();
+            $table->string('thumb', 255)->nullable();
+            $table->string('price', 255)->nullable();
+            $table->string('series', 255)->nullable();
+            $table->date('sale_date')->nullable();
+            $table->string('type', 255)->nullable();
+            $table->json('artists', 255)->nullable();
+            $table->json('writers', 255)->nullable();
+
             $table->timestamps();
         });
     }
