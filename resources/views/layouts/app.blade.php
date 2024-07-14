@@ -20,9 +20,12 @@
 
 <body>
     @include('shared.header')
-    <h1>Laravel Template</h1>
+    {{-- <h1>Laravel Template</h1>
     <img src="{{ Vite::asset('resources/img/logo.jpg') }}" alt="pic">
-    ciao
+    ciao --}}
+    @yield('card-comic')
+    @yield('welcome')
+    @yield('form')
     @include('shared.footer')
 </body>
 

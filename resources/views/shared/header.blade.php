@@ -4,7 +4,8 @@
             <div class="content d-flex justify-content-between align-items-center">
 
                 <div class="col">
-                    <img class="dc-logo" src="{{ Vite::asset('resources/img/dc-logo.png') }}" alt="pic">
+                    <a href="/"><img class="dc-logo" src="{{ Vite::asset('resources/img/dc-logo.png') }}"
+                            alt="pic"></a>
                 </div>
                 <div class="col">
                     <nav class="navbar navbar-expand-lg ">
@@ -16,7 +17,8 @@
                                         <a class="nav-link active" href="#">CHARACTERS</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">COMICS</a>
+                                        {{-- vai a comics.index --}}
+                                        <a class="nav-link" href="{{ route('comics.index') }}">COMICS</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#">MOVIES</a>
