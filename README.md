@@ -1,4 +1,6 @@
-# Esercizio di oggi: DC Comics
+# PRIMA PARTE
+
+Esercizio di oggi: DC Comics
 
 ## nome repo: laravel-dc-comics
 
@@ -22,3 +24,11 @@ Iniziate a definire le prime operazioni CRUD con le relative view:
 creare il seeder per la tabella comics utilizzando il file in allegato.
 In allegato base dati e layout!
 Buon lavoro e buon weekend!
+
+# SECONDA PARTE
+
+nome repo: laravel-dc-comics
+oggi lavorate sulla stessa repo di ieri e completate le operazioni CRUD.
+
+Bonus
+tramite javascript, quando l'utente clicca sul pulsante "delete", chiedere conferma della cancellazione, prima di eliminare l'elemento.

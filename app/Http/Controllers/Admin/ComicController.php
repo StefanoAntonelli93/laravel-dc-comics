@@ -54,6 +54,12 @@ class ComicController extends Controller
     public function show(string $id)
     {
         $comic = Comic::find($id);
+        if ($comic === null) {
+            abort(404);
+            // possiamo anche reindirizzare in un altra pagina se non trova il record
+            //   return redirect()->route('welcome')
+        }
+
         // dd($comic);
         return view('comics.show', compact('comic'));
     }
@@ -63,7 +69,8 @@ class ComicController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $comic = Comic::findOrFail($id);
+        return view('comics.edit', compact('comic'));
     }
 
     /**
