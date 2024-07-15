@@ -42,6 +42,8 @@ class ComicController extends Controller
         $comic->series = $data['series'];
         $comic->price = $data['price'];
         $comic->description = $data['description'];
+
+        // OPPURE $comic->fill($data) CON QUESTO METODO NON HO BISOGNO DI INSERIRE I DATI UNO PER VOLTA COME QUI SOPRA
         $comic->save();
 
         // reindirizzo dopo aver creato il record a comics.show
@@ -76,9 +78,12 @@ class ComicController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+
+        $data = $request->all();
+
+        $comic->update($data);
     }
 
     /**
@@ -86,6 +91,8 @@ class ComicController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $comic = Comic::findOrFail($id);
+        $comic->delete();
+        return redirect()->route('comics.index');
     }
 }

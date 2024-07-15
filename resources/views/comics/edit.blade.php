@@ -5,7 +5,7 @@
 
 @section('form')
     <div class="container py-5 ">
-        <h2>Modifica un Comic</h2>
+        <h2>Modifica <a href="{{ route('comics.show', $comic->id) }}">{{ $comic->title }}</a></h2>
         {{-- creo form metodo POST che vai in comics.update --}}
         <form action="{{ route('comics.update', $comic->id) }}" method="POST">
             {{-- @csrf è il token che autentica la richiesta del form --}}

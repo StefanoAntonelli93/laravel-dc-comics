@@ -5,18 +5,28 @@
 
 @section('card-comic')
     <div class="container py-5">
-        <ul class="list-unstyled ">
-            <li class="d-flex flex-wrap justify-content-between">
+        <ul class="list-unstyled d-flex flex-wrap justify-content-between ">
+            <li>
 
                 @foreach ($comics as $comic)
-                    {{-- vai a comic->id --}}
-                    <div> <a href="{{ route('comics.show', $comic->id) }}">
+                    <div>
+
+                        {{-- vai a comic-info --}}
+                        <a href="{{ route('comics.show', $comic->id) }}">
 
                             <img class="img-comic py-1" src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
                         </a>
-                        <div class="btn"><a href="{{ route('comics.edit', $comic->id) }}">modifica</a></div>
 
                     </div>
+                    {{-- MODIFICA --}}
+                    <div class="btn btn-primary py-2"><a class="text-white"
+                            href="{{ route('comics.edit', $comic->id) }}">modifica</a></div>
+                    {{-- DELETE --}}
+                    <form action="{{ route('comics.destroy', $comic->id) }}"method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-primary">CANCELLA</button>
+                    </form>
                 @endforeach
             </li>
         </ul>
