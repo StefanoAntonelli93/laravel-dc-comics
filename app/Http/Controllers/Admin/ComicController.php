@@ -39,10 +39,10 @@ class ComicController extends Controller
 
         // VALIDAZIONE
         $request->validate([
-            'title' => 'required|max:255',
+            'title' => 'required|string|max:255',
             'description' => 'string|nullable',
             'price' => 'integer|nullable|min:0',
-            'series' => 'nullable',
+            'series' => 'string|nullable',
         ]);
         // dd($data);
         $comic = new Comic();

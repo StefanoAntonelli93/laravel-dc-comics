@@ -5,7 +5,20 @@
 
 @section('form')
     <div class="container py-5 ">
-        <h2>Crea nuovo Comic</h2>
+        {{-- validation --}}
+        {{-- se ci sono errori allora lancia alert-danger --}}
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    {{-- ciclo per tutti gli errori trovo errore e mostro in pagina --}}
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        {{-- //validation --}}
+        <h2 class="py-4">Inserisci nuovo Comic</h2>
         {{-- creo form metodo POST che vai in comics.store --}}
         <form action="{{ route('comics.store') }}" method="POST">
             {{-- @csrf è il token che autentica la richiesta del form --}}
