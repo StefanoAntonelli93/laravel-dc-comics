@@ -5,6 +5,19 @@
 
 @section('form')
     <div class="container py-5 ">
+        {{-- validation --}}
+        {{-- se ci sono errori allora lancia alert-danger --}}
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    {{-- ciclo per tutti gli errori trovo errore e mostro in pagina --}}
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        {{-- //validation --}}
         <h2>Modifica <a href="{{ route('comics.show', $comic->id) }}">{{ $comic->title }}</a></h2>
         {{-- creo form metodo POST che vai in comics.update --}}
         <form action="{{ route('comics.update', $comic->id) }}" method="POST">

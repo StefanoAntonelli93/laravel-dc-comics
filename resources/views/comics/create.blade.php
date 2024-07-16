@@ -25,7 +25,11 @@
             @csrf
             <div class="mb-3">
                 <label class="form-label">Nome comic:</label>
-                <input type="text" class="form-control" name="title">
+                <input type="text" class="form-control" name="title" value="{{ old('title') }}">
+                {{-- messaggio validation di default --}}
+                @foreach ($errors->get('title') as $message)
+                    {{ $message }}
+                @endforeach
             </div>
             <div class="mb-3">
                 <label class="form-label">Descrizione:</label>
