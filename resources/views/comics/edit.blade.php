@@ -29,7 +29,7 @@
                 <label class="form-label">Serie:</label>
                 <input type="text" class="form-control" name="series" value="{{ old('series', $comic->series) }}">
             </div>
-            <button type="submit" class="btn btn-primary">Crea comic</button>
+            <button type="submit" class="btn btn-primary">Modifica</button>
         </form>
     </div>
 @endsection
