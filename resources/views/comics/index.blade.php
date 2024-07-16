@@ -6,9 +6,11 @@
 @section('card-comic')
     <div class="container py-5">
         <ul class="list-unstyled d-flex flex-wrap justify-content-between ">
-            <li>
 
-                @foreach ($comics as $comic)
+
+            @foreach ($comics as $comic)
+                <li>
+                    {{-- fare overlay per inserire sull immagini il tiutolo del comic --}}
                     <div>
 
                         {{-- vai a comic-info --}}
@@ -25,10 +27,11 @@
                     <form action="{{ route('comics.destroy', $comic->id) }}"method="POST">
                         @csrf
                         @method('DELETE')
-                        <button class="btn btn-primary">CANCELLA</button>
+                        <button class="btn btn-primary">cancella</button>
                     </form>
-                @endforeach
-            </li>
+                </li>
+            @endforeach
+
         </ul>
     </div>
 @endsection
