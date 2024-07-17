@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdateComicRequest extends FormRequest
 {
@@ -22,18 +23,23 @@ class UpdateComicRequest extends FormRequest
     public function rules(): array
     {
         return [
-
-            'title' => 'required|string|min:3|max:255',
+            // con Rule possiamo modificare gli altri campi senza errore su title
+            'title' => ['required', 'string', 'min:3', 'max:50', Rule::unique('comics')->ignore($this->comic)],
             'description' => 'string|nullable',
-            'price' => 'nullable|numeric|min:0',
+            'price' => 'nullable|min:0',
             'series' => 'string|nullable',
+            // si può usare anche l'array per le condizioni oltre il pipe
+            // 
         ];
     }
+
     // funzione per messaggi errore validazione personalizzati
     public function messages()
     {
         return [
-            'title' => 'Il titolo è obbligatorio (almeno tre caratteri)'
+            'title.min' => 'Il titolo è obbligatorio (almeno 3 caratteri)',
+            'title.unique' => 'Questo titolo è già stato usato',
+            'title.max' => 'Max 50 caratteri',
         ];
     }
 }

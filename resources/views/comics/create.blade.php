@@ -6,17 +6,7 @@
 @section('form')
     <div class="container py-5 ">
         {{-- validation --}}
-        {{-- se ci sono errori allora lancia alert-danger --}}
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    {{-- ciclo per tutti gli errori trovo errore e mostro in pagina --}}
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+        @include('shared.errors')
         {{-- //validation --}}
         <h2 class="py-4">Inserisci nuovo Comic</h2>
         {{-- creo form metodo POST che vai in comics.store --}}
