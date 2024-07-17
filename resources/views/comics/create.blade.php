@@ -26,7 +26,7 @@
             <div class="mb-3">
                 <label class="form-label">Nome comic:</label>
                 <input type="text" class="form-control" name="title" value="{{ old('title') }}">
-                {{-- messaggio validation di default --}}
+                {{-- messaggio validation di default visualizzato campo per campo in questo caso inserito per validare il titolo --}}
                 @foreach ($errors->get('title') as $message)
                     {{ $message }}
                 @endforeach

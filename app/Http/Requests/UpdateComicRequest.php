@@ -29,4 +29,11 @@ class UpdateComicRequest extends FormRequest
             'series' => 'string|nullable',
         ];
     }
+    // funzione per messaggi errore validazione personalizzati
+    public function messages()
+    {
+        return [
+            'title' => 'Il titolo è obbligatorio (almeno tre caratteri)'
+        ];
+    }
 }

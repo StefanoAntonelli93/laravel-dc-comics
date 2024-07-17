@@ -23,7 +23,7 @@ class StoreComicRequest extends FormRequest
     {
         return [
 
-            'title' => 'required|string|unique:comics|min:3|max:255',
+            'title' => 'required|string|min:3|max:50|unique:comics',
             'description' => 'string|nullable',
             'price' => 'nullable|min:0',
             'series' => 'string|nullable',
@@ -34,7 +34,9 @@ class StoreComicRequest extends FormRequest
     public function messages()
     {
         return [
-            'title' => 'Il titolo è obbligatorio'
+            'title.min' => 'Il titolo è obbligatorio (almeno 3 caratteri)',
+            'title.unique' => 'Questo titolo è già stato usato',
+            'title.max' => 'Max 50 caratteri',
         ];
     }
 }
